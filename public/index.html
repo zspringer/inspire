@@ -7,6 +7,7 @@
 </head>
 
 <body id="body">
+	<div class="row" id="results"></div>
 	<div class="container-fluid">
 		<div id="weather">
 			Your Weather Template
@@ -16,9 +17,15 @@
 			The Quote
 		</div>
 
-		<div id="todo">
-			<form onsubmit=""></form>
-			A Todo List
+		<div class="container" id="todo">
+			<h1>To do List</h1>
+			<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+			<input type="text" name="todoList" placeholder="Enter task">
+			<button type="submit">Add Task</button>
+			</form>
+			<div id="tasks">
+
+			</div>
 		</div>
 	</div>
 

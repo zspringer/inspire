@@ -16,26 +16,31 @@ function TodoService() {
 			.fail(logError)
 	}
 
-	this.addTodo = function (todo, getTodos) {
+	this.addTodo = function (newTodo, getTodos) {
 		// WHAT IS THIS FOR???
-		$.post('/api/todos', todo)
+		$.post('/api/todos', newTodo)
 			.then(getTodos) // <-- DO NOT CHANGE THIS IT WORKS BUT DO YOU KNOW WHY?
+			console.log(newTodo)
 			.fail(logError)
 	}
 
 	this.toggleTodoStatus = function (todoId, getTodos) {
 		// MAKE SURE WE THINK THIS ONE THROUGH
-		var todo = {}
+		//var todo = {}  //Had a {} but I have removed it
 		//STEP 1: Find the todo by its id **HINT** todoList
-
+		var todo = todoList.find(todo => todo._id == todoId)
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
-
+		if (todo.completed == false) {
+			todo.completed = true
+		} else {
+			todo.completed = false
+		}
 		//STEP 3: Here is that weird Ajax request because $.put doesn't exist
 		$.ajax({
 			method: 'PUT',
 			contentType: 'application/json',
 			url: '/api/todos/' + todoId,
-			data: todo
+			data: JSON.stringify(todo)  //I added JSON stringify
 		})
 			.then((message) => {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
@@ -44,13 +49,19 @@ function TodoService() {
 			.fail(logError) // BECAUSE AJAX IS A UNIQUE SNOWFLAKE AND HAS TO BE DIFFERENT YOU CANT USE .catch
 	}
 
-	this.removeTodo = function () {
+	this.removeTodo = function (todoId, getTodos) {
 		// Umm this one is on you.... It's also a unique snowflake the method is a DELETE
-		
+		$.ajax({
+			contentType: 'application/json',
+			method: 'DELETE',
+			url: '/api/todos/' + todoId
+		})
+			.then(getTodos)
+			.fail(logError)
 	}
 
 
 
-// I KNOW LOTS OF CODE RIGHT
+	// I KNOW LOTS OF CODE RIGHT
 
 }

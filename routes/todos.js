@@ -6,7 +6,8 @@ var mongoose = require('mongoose')
 //Schema
 var todoSchema = new mongoose.Schema({
     description: {type: String, required: true},
-    currentPage: {type: Number, required: true, default: 0}
+    completed: {type: Boolean, required: true, default: false},
+    taskCount: {type: Number, required: true, default: 0}
 })
 
 var Todos = mongoose.model('Todo', todoSchema)
