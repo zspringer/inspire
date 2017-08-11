@@ -4,6 +4,8 @@ function ImageController() {
 
 	drawImages = function (image) {
 		document.body.style.backgroundImage = `url(${image.url})`
+		document.body.style.backgroundRepeat = `no-repeat`
+		document.body.style.backgroundSize = `cover`
 	}
 
 	function getImage() {
@@ -11,5 +13,3 @@ function ImageController() {
 	}
 	getImage();
 }
-
-
