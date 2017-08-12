@@ -1,3 +1,10 @@
-body{
-    background-image: no-repeat;
+.weather-section{
+    background-color: gray;
+    width: 4em;
+    
+}
+
+
+.temp:after{
+    content: "\00b0";
 }
