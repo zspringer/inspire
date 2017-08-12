@@ -1,10 +1,21 @@
+
+/*Weather area*/
 .weather-section{
     background-color: gray;
     width: 4em;
     
 }
-
-
+/*Adds the degree symbol after the temp*/
 .temp:after{
     content: "\00b0";
+}
+
+
+/*Section that hides and displays author when quoted hovered over*/
+.quotes-author {
+    display: none
+}
+
+.quotes:hover + .quotes-author {
+    display: block
 }

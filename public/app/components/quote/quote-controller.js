@@ -10,7 +10,8 @@ function QuoteController(){
 		template += `
 		<div class="row">
         <div class="col-xs-12">
-            <div class="quotes">${quote.quote}</div>
+			<div class="quotes">${quote.quote}</div>
+			<div class="quotes-author">~${quote.author}~</div>
 		</div>
 		</div>
         `
