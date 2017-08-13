@@ -18,10 +18,14 @@ function startTime() {
   s = checkTime(s);
   if (h >= 13 && h <= 24){
     h = h - 12;
+    document.getElementById('time').innerHTML =
+    h + ":" + m + ":" + s + " PM";
+    var t = setTimeout(startTime, 500);
+  } else{
+    document.getElementById('time').innerHTML =
+    h + ":" + m + ":" + s + " AM";
+    var t = setTimeout(startTime, 500);
   }
-  document.getElementById('time').innerHTML =
-    h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500);
 }
 
 function checkTime(i) {
