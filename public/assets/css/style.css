@@ -1,21 +1,105 @@
 
-/*Weather area*/
-.weather-section{
-    background-color: gray;
-    width: 4em;
+.body{
+    z-index: -1;
+}
+
+
+/* Start of time area */
+.time-section{
+    display: flex;
+    align-items: center
+}
+
+#time{
+    /* margin: auto; */
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 1050%;
+    z-index: 1;
+    border-radius: 25%;
+}
+
+.time-row{
+    /* outline: solid 2px green; */
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
-/*Adds the degree symbol after the temp*/
+
+/* End of time area */
+/* Start of weather area */
+#weather{
+    width: 100px;
+    height: 100px;
+    /* background-color: lightcoral; */
+    text-align: center;
+    float: right;
+    z-index: 1;
+    color: white;
+    font-size: 20px;
+}
+
+
+    /*Adds the degree symbol after the temp*/
 .temp:after{
     content: "\00b0";
 }
 
+.weather-row{
+    /* outline: solid 2px blue; */
+}
+
+/* End of weather area */
+
 
 /*Section that hides and displays author when quoted hovered over*/
+.quote-and-todo{
+    /* outline: solid 2px green; */
+    height: 30%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+
+.quote-section{
+    font-size: 100%
+}
+
+#quote{
+    /* background-color: purple; */
+    text-align: center;
+    z-index: 1;
+    color: white;
+    font-size: 20px;
+}
+
+
 .quotes-author {
     display: none
 }
 
 .quotes:hover + .quotes-author {
-    display: block
+    display: block;
+    text-align: center;
+}
+
+/* Section for todos */
+
+
+#todo{
+    float: right;
+    z-index: 1;
+    color: black;
+}
+
+#tasks{
+    float: center;
+    z-index: 1;
 }

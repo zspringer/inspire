@@ -3,27 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Inspire</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body id="body">
+<body id="body" onload="startTime()">
 	<div class="container-fluid">
-		<div id="weather">
-			Your Weather Template
+		<div class="row weather-row">
+			<div class="col-xs-12 weather-section">
+				<div id="weather">
+					Weather goes here
+				</div>
+			</div>
 		</div>
-
-		<div id="quote">
-			The Quote
+		<div class="row time-row">
+			<div class="col xs-12 time-section">
+				<div id="time">
+					Time goes here
+				</div>
+			</div>
 		</div>
+		<div class="row quote-and-todo">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-4 quote-section">
+				<div id="quote">
+					The Quote
+				</div>
+			</div>
+			<div class="col-xs-4 todo-section">
+				<div id="todo">
+					<h1>To Do List</h1>
+					<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+						<input type="text" name="todoList" placeholder="Enter task">
+						<button type="submit" >Add Task</button>
+					</form>
+					<div id="tasks">
 
-		<div class="container" id="todo">
-			<h1>To do List</h1>
-			<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-			<input type="text" name="todoList" placeholder="Enter task">
-			<button type="submit">Add Task</button>
-			</form>
-			<div id="tasks">
-
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

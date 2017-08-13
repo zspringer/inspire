@@ -6,13 +6,9 @@ function WeatherController(){
         var template = ''
         var weatherElem = document.getElementById('weather')
 		template += `
-		<div class="row">
-        <div class="col-xs-12 weather-section">
 			<div class="temp">${(Math.ceil((((weather.main.temp)-273.15)*1.8)+32))}</div>
 			<div class="conditions">${weather.weather[0].main}</div>
 			<div class="location">${weather.name}</div>
-		</div>
-		</div>
         `
         weatherElem.innerHTML = template
     }

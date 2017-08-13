@@ -32,7 +32,6 @@ function TodoController() {
 
 	}
 	
-	console.log("Hello")
 	this.addTodoFromForm = function (e) {
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
