@@ -28,12 +28,9 @@ function TodoService() {
 		//var todo = {}  //Had a {} but I have removed it
 		//STEP 1: Find the todo by its id **HINT** todoList
 		var todo = todoList.find(todo => todo._id == todoId)
-		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
-		if (todo.completed == false) {
-			todo.completed = true
-		} else {
-			todo.completed = false
-		}
+		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed	
+		todo.completed = !todo.completed
+		// console.log(todo.completed)
 		//STEP 3: Here is that weird Ajax request because $.put doesn't exist
 		$.ajax({
 			method: 'PUT',

@@ -17,18 +17,38 @@ function TodoController() {
 	function draw(todos) {
 		//WHAT IS MY PURPOSE?
 		var todoElem = document.getElementById("tasks")
+		var countElem = document.getElementById("count")
 		//BUILD YOUR TODO TEMPLATE HERE
 		var template = '<ul>'
 		//DONT FORGET TO LOOP
+		count = 0;
 		for (var i = 0; i < todos.length; i++){
 			var todo = todos[i]
+			if (todos[i].completed == false){
+			count++}
+			if (todo.completed == true){
 			template += `
-			<li>${todo.description}:</li>
+			<div>
+			<input type="checkbox" name="taskCheck" checked="checked" value="Task" onchange="app.controllers.todoController.toggleTodoStatus('${todo._id}')">${todo.description}: Completed? ${todo.completed}</input>
+			</div>
 			<button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Delete</button>
 			`
+			} else{
+				template += `
+				<div>
+				<input type="checkbox" name="taskCheck" value="Task" onchange="app.controllers.todoController.toggleTodoStatus('${todo._id}')">${todo.description}: Completed? ${todo.completed}</input>
+				</div>
+				<button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Delete</button>
+				`
+			}
 		}
+		//was above the checkbox area
+		// <li>${todo.description}:</li>
+
+		console.log(count)
 		template += '</ul>'
 		todoElem.innerHTML = template
+		countElem.innerHTML = count
 
 	}
 	
