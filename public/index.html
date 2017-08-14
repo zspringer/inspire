@@ -13,7 +13,7 @@
 		<div class="row weather-row">
 			<div class="col-xs-12 weather-section">
 				<div id="weather">
-					Weather goes here
+					
 				</div>
 			</div>
 		</div>
@@ -28,15 +28,18 @@
 			<div class="col-xs-4"></div>
 			<div class="col-xs-4 quote-section">
 				<div id="quote">
-					The Quote
+					
 				</div>
 			</div>
 			<div class="col-xs-4 todo-section">
 				<div id="todo">
 					<h1>To Do List</h1>
+					<div id="count">
+
+					</div>
 					<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
 						<input type="text" name="todoList" placeholder="Enter task">
-						<button type="submit" >Add Task</button>
+						<button type="submit">Add Task</button>
 					</form>
 					<div id="tasks">
 

@@ -35,6 +35,7 @@ function TodoController() {
 	this.addTodoFromForm = function (e) {
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
+		var form = event.target;
 		var description = e.target.todoList.value
 		var newTodo = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
@@ -45,7 +46,8 @@ function TodoController() {
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
 		//YOU SHOULDN'T NEED TO CHANGE THIS
 		todoService.addTodo(newTodo, getTodos)
-		                         //^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
+								 //^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
+		form.reset();
 	}
 
 	this.toggleTodoStatus = function (todoId) {

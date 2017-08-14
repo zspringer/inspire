@@ -20,7 +20,6 @@ function TodoService() {
 		// WHAT IS THIS FOR???
 		$.post('/api/todos', newTodo)
 			.then(getTodos) // <-- DO NOT CHANGE THIS IT WORKS BUT DO YOU KNOW WHY?
-			console.log(newTodo)
 			.fail(logError)
 	}
 
