@@ -42,10 +42,7 @@ function TodoController() {
 				`
 			}
 		}
-		//was above the checkbox area
-		// <li>${todo.description}:</li>
 
-		console.log(count)
 		template += '</ul>'
 		todoElem.innerHTML = template
 		countElem.innerHTML = count
