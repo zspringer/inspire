@@ -5,7 +5,7 @@ var expressSanitizer = require('express-sanitizer');
 var dbConnect = require('./config/db/mlab-config')
 
 var server = express()
-var port = 3000
+var port = process.env.PORT || 3000;
 
 //tell your server what it needs to use - MIDDLEWARE
 server.use(express.static(__dirname + '/public'))
